@@ -50,29 +50,29 @@ gcloud services enable compute.googleapis.com \
 
 ## 🚦 Usage
 1️⃣ Initialize Terraform
-terraform init
+- terraform init
 
 2️⃣ Select/Create Workspace
-terraform workspace new dev-stage   # create if not exists
-terraform workspace select dev-stage
+- terraform workspace new dev-stage   # create if not exists
+- terraform workspace select dev-stage
 
-terraform workspace new prod        # create if not exists
-terraform workspace select prod
+- terraform workspace new prod        # create if not exists
+- terraform workspace select prod
 
 3️⃣ Plan & Apply
-terraform plan -var-file=dev-stage.tfvars
-terraform apply -var-file=dev-stage.tfvars
+- terraform plan -var-file=dev-stage.tfvars
+- terraform apply -var-file=dev-stage.tfvars
 
-terraform plan -var-file=prod.tfvars
-terraform apply -var-file=prod.tfvars
+- terraform plan -var-file=prod.tfvars
+- terraform apply -var-file=prod.tfvars
 
 ---
 
 ## 📝 Notes
 
-GKE Autopilot cluster is created only in prod.
-CloudSQL instances differ by environment:
-Dev-stage → 2 instances (2 vCPUs each).
-Prod → 1 instance (4 vCPUs).
-Sensitive values (like DB password) should be managed securely (e.g., Terraform Cloud variables or GCP Secret Manager).
-The deploy.ps1 and deploy.sh scripts automate init → plan → apply with color-coded logs for easy debugging.
+- GKE Autopilot cluster is created only in prod.
+- CloudSQL instances differ by environment:
+- Dev-stage → 2 instances (2 vCPUs each).
+- Prod → 1 instance (4 vCPUs).
+- Sensitive values (like DB password) should be managed securely (e.g., Terraform Cloud variables or GCP Secret Manager).
+- The deploy.ps1 and deploy.sh scripts automate init → plan → apply with color-coded logs for easy debugging.
